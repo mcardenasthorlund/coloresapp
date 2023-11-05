@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores</title>
+
+    <!-- Opciones para PWA -->
+    <!-- Manifiesto -->
+    <link rel="manifest" href="manifest.webmanifest">
+    <!-- Index JS-->
+    <script src="assets/js/index.js"></script>
+    <!-- Fin Opciones para PWA -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <!-- Etiquetas Meta -->
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Colores" />
+    <meta name="description" content="Juego del acertijo de los colores" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ifcd0110.nidea-soluciones.com/colores/index.html" />
+    <meta property="og:title" content="Colores" />
+    <meta property="og:description"
+        content="Juego del acertijo de los colores" />
+    <meta property="og:image" content="https://ifcd0110.nidea-soluciones.com/colores/assets/img/icono.jpg" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://ifcd0110.nidea-soluciones.com/colores/index.html" />
+    <meta property="twitter:title" content="Colores" />
+    <meta property="twitter:description"
+        content="Juego del acertijo de los colores" />
+    <meta property="twitter:image" content="https://ifcd0110.nidea-soluciones.com/colores/assets/img/icono.jpg" />
+
+
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="assets/css/estilo.css">
+    <script src="assets/js/aplicacion.js"></script>
+    <script>
+        let objAplicacion;
+        document.addEventListener('DOMContentLoaded', () => {
+            objAplicacion = new Aplicacion('objAplicacion');
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <main class="contenedor">
+        <!-- Div de inicio -->
+        <div id="div-inicial" class="div-contenedor">
+            <h1>Colores (v1.4)</h1>
+            <p>Adivina la combinación correcta</p>
+            <button class="btn btn-warning" id="btnComenzar">Comenzar el juego <i class="bi bi-chevron-double-right"
+                    style="color:white"></i></button>
+
+            <div style="margin-top: 30px;">
+                <div class="circulo rojo"></div>
+                <div class="circulo verde"></div>
+                <div class="circulo morado"></div>
+                <div class="circulo naranja"></div>
+                <div class="circulo amarillo"></div>
+                <div class="circulo azul"></div>
+                <div class="circulo negro"></div>
+                <div class="circulo blanco"></div>
+            </div>
+
+            <small class="mt-5">Manuel Cárdenas Thorlund
+                <br>
+                &copy; 2023 Todos los derechos reservados
+                <br>
+                <img src="assets/img/logo-manolo.png" alt="" class="img-fluid mt-3" style="max-width: 200px;">
+            </small>
+        </div>
+
+
+        <!-- Combinacion de colores -->
+        <div id="div-combinacion" class="div-contenedor">
+            <h2>Combinación</h2>
+            <p>Selecciona la combinación secreta</p>
+            <div>
+                <div class="circulo principal" id="0"></div>
+                <div class="circulo principal" id="1"></div>
+                <div class="circulo principal" id="2"></div>
+                <div class="circulo principal" id="3"></div>
+                <div class="circulo principal" id="4"></div>
+            </div>
+            <div id="div-seleccion">
+
+            </div>
+
+            <div style="width: 100%;">
+                <button class="btn btn-warning" id="btnJugar">Jugar <i class="bi bi-chevron-double-right"
+                        style="color:white"></i></button>
+                <button class="btn btn-danger" id="btnJugarIA">Juega contra la IA <i class="bi bi-chevron-double-right"
+                        style="color:white"></i></button>
+            </div>
+        </div>
+
+        <!-- Juego -->
+        <div id="div-juego" class="div-contenedor">
+            <button class="btn btn-warning btn-sm" id="btnNuevoJuego">Nuevo juego <i class="bi bi-chevron-double-right"
+                style="color:white"></i></button>
+            <h2>Adivina la combinación</h2>
+
+            <div>
+                <div class="circulo principal" id="r0">?</div>
+                <div class="circulo principal" id="r1">?</div>
+                <div class="circulo principal" id="r2">?</div>
+                <div class="circulo principal" id="r3">?</div>
+                <div class="circulo principal" id="r4">?</div>
+            </div>
+
+            <div id="div-circulos-juego" style="margin-bottom: 10px;margin-top: 10px;"></div>
+
+
+
+            
+            <div style="width: 100%;font-size: 0.8em;" class="text-center">
+                <span class="correctas" style="margin-right: 10px;">&nbsp;</span>Correcto / Sitio
+                <span class="incorrectas" style="margin-right: 10px;">&nbsp;</span>Correcto / NO sitio
+            </div>
+
+        </div>
+
+        <div class="toast-container bottom-0 start-50 translate-middle-x">
+            <div class="toast align-items-center text-bg-primary border-0" role="alert">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        <div>
+                            <div class="circulo seleccion rojo" onclick="objAplicacion.ponerColor(0)"></div>
+                            <div class="circulo seleccion verde" onclick="objAplicacion.ponerColor(1)"></div>
+                            <div class="circulo seleccion morado" onclick="objAplicacion.ponerColor(2)"></div>
+                            <div class="circulo seleccion naranja" onclick="objAplicacion.ponerColor(3)"></div>
+                            <div class="circulo seleccion amarillo" onclick="objAplicacion.ponerColor(4)"></div>
+                            <div class="circulo seleccion azul" onclick="objAplicacion.ponerColor(5)"></div>
+                            <div class="circulo seleccion negro" onclick="objAplicacion.ponerColor(6)"></div>
+                            <div class="circulo seleccion blanco" onclick="objAplicacion.ponerColor(7)"></div>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                        aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="mdlMensaje" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-body text-center" id="modal-mensaje" style="font-weight: bold;color: black;">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
