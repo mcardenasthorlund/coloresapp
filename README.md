@@ -8,7 +8,21 @@
 
 ###
 
-<p align="left">Juego realizado completamente en Vanilla Js como material para el curso IFCD0110 de Diseño y Publicación de páginas web.</p>
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40" alt="javascript logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40" alt="css3 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40" alt="html5 logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" height="40" alt="bootstrap logo"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" height="40" alt="vscode logo"  />
+</div>
+
+###
+
+<p align="left">Juego realizado completamente en Vanilla Js como material para el curso IFCD0110 de Diseño y Publicación de páginas web. Se puede jugar en la siguiente URL: <a href="https://ifcd0110.nidea-soluciones.com/colores/index.html" target="_blank">https://ifcd0110.nidea-soluciones.com/colores/index.html</a></p>
 
 ###
 
@@ -25,7 +39,7 @@
 ###
 
 <div align="center">
-  <img height="200" src="https://ifcd0110.nidea-soluciones.com/colores/assets/img/logo-manolo-blanco.png"  />
+  <img height="200" src="https://ifcd0110.nidea-soluciones.com/colores/assets/img/logo-manolo.png"  />
 </div>
 
 ###
