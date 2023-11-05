@@ -38,8 +38,13 @@
 
 ###
 
+<h3 align="left">PWA. Progressive Web App</h3>
+
+###
+<p align="left">Se incluyen los ficheros de publicación como app PWA (service-worker.js + manifiesto), así como un fichero de registro del SW en caso que se pueda.</p>
+###
 <div align="center">
-  <img height="200" src="https://ifcd0110.nidea-soluciones.com/colores/assets/img/logo-manolo.png"  />
+  <img height="200" src="https://ifcd0110.nidea-soluciones.com/colores/assets/img/logo-manolo-blanco.png"  />
 </div>
 
 ###
